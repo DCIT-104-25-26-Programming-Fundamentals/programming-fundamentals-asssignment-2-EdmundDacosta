@@ -57,3 +57,47 @@
 #include <iostream>
 using namespace std;
 
+void printSingleTable(int number)
+{
+    cout << "Multiplication Table for " << number << ":" << endl;
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << number << " x " << i << " = " << (number * i) << endl;
+    }
+}
+
+void printTablesUpToN(int n)
+{
+    for (int number = 1; number <= n; number++)
+    {
+        cout << "Multiplication Table for " << number << ":" << endl;
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << number << " x " << i << " = " << (number * i) << endl;
+        }
+        if (number < n)
+        {
+            cout << "---------------------------" << endl;
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return 1;
+    }
+
+    printSingleTable(n);
+    cout << "\nBonus: Tables from 1 to " << n << endl;
+    printTablesUpToN(n);
+
+    return 0;
+}
+
